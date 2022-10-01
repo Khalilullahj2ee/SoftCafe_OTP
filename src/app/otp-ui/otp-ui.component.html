@@ -1,0 +1,29 @@
+<div class="bg-image" 
+style="background-image:url('assets/image/cover.jpg'); min-height: 700px; min-width: 200px; background-size: cover;">
+            
+<div class="container h-100">
+    <div class="d-flex justify-content-md-center align-items-center vh-100">
+        <div class="card " style="width: 19rem; margin:auto; box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);">
+            <div class="card-body text-center">
+                <div style="width: 15rem; margin:auto">
+                    <span class="start-0 position-absolute top-1 bg-warning border border-light rounded-circle"
+                        style="margin-left: 15px; padding-left: 8px; padding-right: 8px; color: white; font-weight: 700;">1</span>
+                    <h5 class="card-title text-center fw-bolder p-4"> OTP</h5>
+                    <div class="card-text text-center fw-bold">Hello User</div>
+                    <div class="card-text text-center fw-bold">Please Signup Our System</div>
+
+                    <div class="input-group mt-4 mb-4 text-center">
+                        <form [formGroup]="fg">
+                            <input type="text" class="form-control text-center rounded-pill border border-2 border-warning"
+                                id="phoneNumber" name="phoneNumber." placeholder="Enter Phone Number"
+                                formControlName="phoneNumber">
+                        </form>
+                    </div>
+                    <a (click)="saveOtp()" style="background-color: #f1de73; margin-bottom: 70px;"
+                        class="btn btn-warning rounded-pill fw-bold w-100">REQUEST FOR OTP</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
