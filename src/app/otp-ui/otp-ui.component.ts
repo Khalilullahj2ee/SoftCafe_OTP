@@ -36,7 +36,7 @@ this.http.post<any>('http://localhost:8081/otp',this.fg.value).subscribe(data =>
 },
 error => {
   console.log(error.status);
-  this.toastr.error("OTP Send Faild")
+  this.toastr.error("OTP Send Faild, Please Enter the valid Number")
 })
 
   }
