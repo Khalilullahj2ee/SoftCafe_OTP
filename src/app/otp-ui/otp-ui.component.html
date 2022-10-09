@@ -15,13 +15,13 @@ style="background-image:url('assets/image/OTP_bg_image.png'); min-height: 700px;
                     <div class="input-group mt-4 mb-4 text-center">
                         <form [formGroup]="fg">
                             <input type="text" class="form-control text-center rounded-pill border border-2 border-warning"
-                                id="phoneNumber" name="phoneNumber." placeholder="Enter Phone Number"
+                               #box required maxlength="14" name="phoneNumber." placeholder="Enter Phone Number"
                                 formControlName="phoneNumber">
                         </form>
                     </div>
-                    <a (click)="saveOtp()" style="background-color: #f1de73; margin-bottom: 70px;"
+                    <a (click)="saveOtp(box.value)" style="background-color: #f1de73; margin-bottom: 70px;"
                         class="btn btn-warning rounded-pill fw-bold w-100">REQUEST FOR OTP</a>
-                </div>
+                </div> 
             </div>
         </div>
     </div>

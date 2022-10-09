@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './otp-ui.component.html',
 })
 export class OtpUiComponent implements OnInit {
+  displayVal:string = "";
    
   fg = new FormGroup({
     phoneNumber: new FormControl(),
@@ -24,13 +25,15 @@ export class OtpUiComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  saveOtp(){
+  saveOtp(val:string){
 this.http.post<any>('http://localhost:8081/otp',this.fg.value).subscribe(data => {
   console.log(data);
   if (data.statusCode === 200){
     console.log('got to next page');
     this.toastr.success("OTP Send Successfully"); 
     this.router.navigate(['/success']);
+    this.router.navigate(['/success'],{queryParams:{data:this.displayVal}})
+     
   } 
   
 },
@@ -38,7 +41,8 @@ error => {
   console.log(error.status);
   this.toastr.error("OTP Send Faild, Please Enter the valid Number")
 })
+console.log(val);
+this.displayVal=val;
 
-  }
-
+  } 
 }
